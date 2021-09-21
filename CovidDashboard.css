@@ -1,0 +1,156 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #FFE6EE;
+}
+
+header{
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#chartContainer{
+    background-color: #b6afac;
+    float: right;
+    width: 650px;
+    height: 650px;
+    border-style: solid;
+    border-radius: 2%;
+}
+
+#numbers{
+    position: center;
+    margin-left: 2%;
+    float: left;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.countryName{
+    color: #f3526a;
+    font-size: xx-large;
+}
+
+#conf{
+    display: inline;
+}
+
+#confirmed{
+    display: inline;
+    font-size: 20px;
+    color: #b6afac;
+}
+
+#dead{
+    display: inline;
+}
+
+#deaths{
+    display: inline;
+    font-size: 20px;
+    color: #b6afac;
+}
+
+#recov{
+    display: inline;
+}
+
+#recovered{
+    display: inline;
+    font-size: 20px;
+    color: #b6afac;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 10;
+    width: 49.6%;
+    background-color: #f3526a;
+    color: #FFE6EE;
+    text-align: center;
+    height: 7%;
+}
+
+span{
+    font-size: x-large;
+    color: #f3526a;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #161616;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar p {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #b6afac;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidebar a{
+    color: #b6afac;
+}
+
+.sidebar p:hover {
+    color: #f3526a;
+}
+  
+.sidebar a:hover {
+    color: #f3526a;
+}
+
+.sidebar .closeNav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#sidebarIcon{
+    float: left;
+    margin-top: 0px;
+}
+
+#search{
+    width: 68%;
+    margin-left: 2%;
+    margin-top: 7%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+  
+@media screen and (max-height: 640px) and (max-width: 720px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar p {font-size: 18px;}
+    #chartContainer {
+        width: 425px;
+        height: 425px;
+    }
+    footer {display: none;}
+}

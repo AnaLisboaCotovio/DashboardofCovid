@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="CovidDashboard.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <link rel="icon" href="icon.png" />
+</head>
+
+<body>
+  <header class="header">
+    <img src="Logo.png" width="200" height="100">
+  </header>
+
+  <div id="sideBar" class="sidebar">
+    <img id= "sidebarIcon" src="icon sidebar.png" width="50" height="50">
+    <a class="closeNav" onclick="closeNav()">&times;</a>
+    <input type="text" id="search" onkeyup="search()" placeholder="Search a Country..."
+      onclick="this.placeholder = ''" />
+    <div id="listCountries">
+      <p class="country">Afghanistan</p>
+      <p class="country">Albania</p>
+      <p class="country">Algeria</p>
+      <p class="country">Andorra</p>
+      <p class="country">Angola</p>
+      <p class="country">Antigua and Barbuda</p>
+      <p class="country">Argentina</p>
+      <p class="country">Armenia</p>
+      <p class="country">Australia</p>
+      <p class="country">Austria</p>
+      <p class="country">Azerbaijan</p>
+      <p class="country">Bahamas</p>
+      <p class="country">Bahrain</p>
+      <p class="country">Bangladesh</p>
+      <p class="country">Barbados</p>
+      <p class="country">Belarus</p>
+      <p class="country">Belgium</p>
+      <p class="country">Belize</p>
+      <p class="country">Benin</p>
+      <p class="country">Bhutan</p>
+      <p class="country">Bolivia</p>
+      <p class="country">Bosnia and Herzegovina</p>
+      <p class="country">Botswana</p>
+      <p class="country">Brazil</p>
+      <p class="country">Brunei</p>
+      <p class="country">Bulgaria</p>
+      <p class="country">Burkina Faso</p>
+      <p class="country">Burma</p>
+      <p class="country">Burundi</p>
+      <p class="country">Cabo Verde</p>
+      <p class="country">Cambodia</p>
+      <p class="country">Cameroon</p>
+      <p class="country">Canada</p>
+      <p class="country">Central African Republic</p>
+      <p class="country">Chad</p>
+      <p class="country">Chile</p>
+      <p class="country">China</p>
+      <p class="country">Colombia</p>
+      <p class="country">Congo (Brazzaville)</p>
+      <p class="country">Congo (Kinshasa)</p>
+      <p class="country">Costa Rica</p>
+      <p class="country">Cote d'Ivoire</p>
+      <p class="country">Croatia</p>
+      <p class="country">Cuba</p>
+      <p class="country">Cyprus</p>
+      <p class="country">Czechia</p>
+      <p class="country">Denmark</p>
+      <p class="country">Diamond Princess</p>
+      <p class="country">Djibouti</p>
+      <p class="country">Dominica</p>
+      <p class="country">Dominican Republic</p>
+      <p class="country">Ecuador</p>
+      <p class="country">Egypt</p>
+      <p class="country">El Salvador</p>
+      <p class="country">Equatorial Guinea</p>
+      <p class="country">Eritrea</p>
+      <p class="country">Estonia</p>
+      <p class="country">Eswatini</p>
+      <p class="country">Ethiopia</p>
+      <p class="country">Fiji</p>
+      <p class="country">Finland</p>
+      <p class="country">France</p>
+      <p class="country">Gabon</p>
+      <p class="country">Gambia</p>
+      <p class="country">Georgia</p>
+      <p class="country">Germany</p>
+      <p class="country">Ghana</p>
+      <p class="country">Greece</p>
+      <p class="country">Grenada</p>
+      <p class="country">Guatemala</p>
+      <p class="country">Guinea</p>
+      <p class="country">Guinea-Bissau</p>
+      <p class="country">Guyana</p>
+      <p class="country">Haiti</p>
+      <p class="country">Holy See</p>
+      <p class="country">Honduras</p>
+      <p class="country">Hungary</p>
+      <p class="country">Iceland</p>
+      <p class="country">India</p>
+      <p class="country">Indonesia</p>
+      <p class="country">Iran</p>
+      <p class="country">Iraq</p>
+      <p class="country">Ireland</p>
+      <p class="country">Israel</p>
+      <p class="country">Italy</p>
+      <p class="country">Jamaica</p>
+      <p class="country">Japan</p>
+      <p class="country">Jordan</p>
+      <p class="country">Kazakhstan</p>
+      <p class="country">Kenya</p>
+      <p class="country">Korea, South</p>
+      <p class="country">Kosovo</p>
+      <p class="country">Kuwait</p>
+      <p class="country">Kyrgyzstan</p>
+      <p class="country">Laos</p>
+      <p class="country">Latvia</p>
+      <p class="country">Lebanon</p>
+      <p class="country">Liberia</p>
+      <p class="country">Libya</p>
+      <p class="country">Liechtenstein</p>
+      <p class="country">Lithuania</p>
+      <p class="country">Luxembourg</p>
+      <p class="country">MS Zaandam</p>
+      <p class="country">Madagascar</p>
+      <p class="country">Malawi</p>
+      <p class="country">Malaysia</p>
+      <p class="country">Maldives</p>
+      <p class="country">Mali</p>
+      <p class="country">Malta</p>
+      <p class="country">Mauritania</p>
+      <p class="country">Mauritius</p>
+      <p class="country">Mexico</p>
+      <p class="country">Moldova</p>
+      <p class="country">Monaco</p>
+      <p class="country">Mongolia</p>
+      <p class="country">Montenegro</p>
+      <p class="country">Morocco</p>
+      <p class="country">Mozambique</p>
+      <p class="country">Namibia</p>
+      <p class="country">Nepal</p>
+      <p class="country">Netherlands</p>
+      <p class="country">New Zealand</p>
+      <p class="country">Nicaragua</p>
+      <p class="country">Niger</p>
+      <p class="country">Nigeria</p>
+      <p class="country">North Macedonia</p>
+      <p class="country">Norway</p>
+      <p class="country">Oman</p>
+      <p class="country">Pakistan</p>
+      <p class="country">Panama</p>
+      <p class="country">Papua New Guinea</p>
+      <p class="country">Paraguay</p>
+      <p class="country">Peru</p>
+      <p class="country">Philippines</p>
+      <p class="country">Poland</p>
+      <p class="country">Portugal</p>
+      <p class="country">Qatar</p>
+      <p class="country">Romania</p>
+      <p class="country">Russia</p>
+      <p class="country">Rwanda</p>
+      <p class="country">Saint Kitts and Nevis</p>
+      <p class="country">Saint Lucia</p>
+      <p class="country">Saint Vincent and the Grenadines</p>
+      <p class="country">San Marino</p>
+      <p class="country">Sao Tome and Principe</p>
+      <p class="country">Saudi Arabia</p>
+      <p class="country">Senegal</p>
+      <p class="country">Serbia</p>
+      <p class="country">Seychelles</p>
+      <p class="country">Sierra Leone</p>
+      <p class="country">Singapore</p>
+      <p class="country">Slovakia</p>
+      <p class="country">Slovenia</p>
+      <p class="country">Somalia</p>
+      <p class="country">South Africa</p>
+      <p class="country">South Sudan</p>
+      <p class="country">Spain</p>
+      <p class="country">Sri Lanka</p>
+      <p class="country">Sudan</p>
+      <p class="country">Suriname</p>
+      <p class="country">Sweden</p>
+      <p class="country">Switzerland</p>
+      <p class="country">Syria</p>
+      <p class="country">Taiwan*</p>
+      <p class="country">Tanzania</p>
+      <p class="country">Thailand</p>
+      <p class="country">Timor-Leste</p>
+      <p class="country">Togo</p>
+      <p class="country">Trinidad and Tobago</p>
+      <p class="country">Tunisia</p>
+      <p class="country">Turkey</p>
+      <p class="country">US</p>
+      <p class="country">Uganda</p>
+      <p class="country">Ukraine</p>
+      <p class="country">United Arab Emirates</p>
+      <p class="country">United Kingdom</p>
+      <p class="country">Uruguay</p>
+      <p class="country">Uzbekistan</p>
+      <p class="country">Venezuela</p>
+      <p class="country">Vietnam</p>
+      <p class="country">West Bank and Gaza</p>
+      <p class="country">Western Sahara</p>
+      <p class="country">Yemen</p>
+      <p class="country">Zambia</p>
+      <p class="country">Zimbabwe</p>
+    </div>
+  </div>
+
+  <div id="main">
+    <span onclick="openNav()">&#9776; Country List</span> <br><br>
+
+    <div class= "clearfix">
+      <div id="numbers">
+        <h1 class="countryName">Portugal</h1>
+        <h2 class="cases" id="conf">Confirmed Cases:</h2>
+        <p id="confirmed" class="cases1"></p>
+        <br><br>
+        <h2 class="cases" id="dead">Number of Deaths:</h2>
+        <p id="deaths" class="cases1"></p>
+        <br><br>
+        <h2 class="cases" id="recov">Recovered Cases:</h2>
+        <p id="recovered" class="cases1"></p>
+      </div>
+
+      <div id="chartContainer" *ngIf="lineChartData">
+        <canvas id="theChart" height="500" width="500"> </canvas>
+
+        <script src="CovidDashboard.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <p id='creditos'>Individual Project of TAW by Ana Lisboa Cotovio</p>
+</footer>
+
+</html>
